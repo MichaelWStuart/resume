@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #f5f5f5;
+}
+
+.resume-page {
+  max-width: 8.5in;
+  padding: 0.5in;
+  box-sizing: border-box;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  body {
+    background-color: white;
+  }
+
+  .resume-page {
+    max-width: 100%;
+    padding: 1rem;
+    box-shadow: none;
+  }
+
+  .experience-header {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
+
+/* Print styles - force consistent sizing regardless of screen */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html {
+    font-size: 12pt !important;
+  }
+
+  body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    width: 8.5in !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .resume-page {
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0.4in !important;
+    max-width: 8.5in !important;
+    width: 8.5in !important;
+    min-width: 8.5in !important;
+  }
+
+  /* Keep individual job entries together, but allow section to flow */
+  .experience-item {
+    break-inside: avoid;
+  }
+}
+
+@page {
+  size: letter;
+  margin: 0.25in;
+}

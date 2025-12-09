@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michael Stuart - Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: #f5f5f5;
+      padding: 2rem 0;
+    }
+
+    .no-print {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .download-btn {
+      padding: 0.5rem 1rem;
+      background-color: #111;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .download-btn:hover {
+      background-color: #333;
+    }
+
+    .resume-page {
+      width: 8.5in;
+      min-height: 11in;
+      max-height: 11in;
+      padding: 0.5in;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 0 auto;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact {
+      font-size: 0.875rem;
+      color: #666;
+      display: flex;
+      gap: 1rem;
+    }
+
+    /* Section titles */
+    .section-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Summary */
+    .summary {
+      margin-bottom: 1rem;
+    }
+
+    .summary p {
+      font-size: 0.875rem;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    /* Experience */
+    .experience {
+      margin-bottom: 1rem;
+    }
+
+    .experience-item {
+      margin-bottom: 0.75rem;
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.25rem;
+    }
+
+    .experience-title {
+      font-weight: 600;
+      color: #111;
+    }
+
+    .experience-company {
+      color: #666;
+    }
+
+    .experience-meta {
+      font-size: 0.875rem;
+      color: #666;
+    }
+
+    .experience-bullets {
+      list-style: disc;
+      margin-left: 1rem;
+      font-size: 0.875rem;
+      color: #444;
+    }
+
+    .experience-bullets li {
+      margin-bottom: 0.125rem;
+    }
+
+    /* Skills */
+    .skills {
+      margin-bottom: 1rem;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.375rem;
+    }
+
+    .skill-tag {
+      padding: 0.25rem 0.5rem;
+      background-color: #f3f3f3;
+      color: #444;
+      font-size: 0.75rem;
+      border-radius: 3px;
+    }
+
+    /* Footer */
+    .reference-footer {
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #666;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background-color: white;
+        padding: 0;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+
+      .resume-page {
+        box-shadow: none;
+        margin: 0;
+      }
+    }
+
+    @page {
+      size: letter;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="no-print">
+    <button class="download-btn" onclick="downloadPDF()">Download PDF</button>
+  </div>
+
+  <div class="resume-page" id="resume">
+    <header>
+      <h1>Michael Stuart</h1>
+      <div class="contact">
+        <span>michael@example.com</span>
+        <span>(555) 123-4567</span>
+      </div>
+    </header>
+
+    <section class="summary">
+      <h2 class="section-title">Summary</h2>
+      <p>Full-stack engineer with a career arc spanning early front-end focus, comprehensive full-stack development, and now pioneering work in agentic AI-driven systems. Passionate about building products that leverage cutting-edge technology to solve real problems.</p>
+    </section>
+
+    <section class="experience">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="experience-item">
+        <div class="experience-header">
+          <div>
+            <span class="experience-title">Engineering Lead</span>
+            <span class="experience-company"> · Third Ear</span>
+          </div>
+          <div class="experience-meta">Feb 2025 – Present · Remote</div>
+        </div>
+        <ul class="experience-bullets">
+          <li>Placeholder bullet point for current role achievements</li>
+          <li>Placeholder bullet point for technical leadership</li>
+          <li>Placeholder bullet point for team collaboration</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-header">
+          <div>
+            <span class="experience-title">Senior Software Engineer</span>
+            <span class="experience-company"> · Previous Company</span>
+          </div>
+          <div class="experience-meta">Jan 2022 – Jan 2025 · Remote</div>
+        </div>
+        <ul class="experience-bullets">
+          <li>Placeholder bullet point for previous role</li>
+          <li>Placeholder bullet point for key accomplishments</li>
+          <li>Placeholder bullet point for technical contributions</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-header">
+          <div>
+            <span class="experience-title">Software Engineer</span>
+            <span class="experience-company"> · Earlier Company</span>
+          </div>
+          <div class="experience-meta">Jun 2019 – Dec 2021 · San Francisco, CA</div>
+        </div>
+        <ul class="experience-bullets">
+          <li>Placeholder bullet point for earlier experience</li>
+          <li>Placeholder bullet point for growth and learning</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-list">
+        <span class="skill-tag">TypeScript</span>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">AWS</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">GraphQL</span>
+        <span class="skill-tag">REST APIs</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">CI/CD</span>
+        <span class="skill-tag">Agile</span>
+      </div>
+    </section>
+
+    <footer class="reference-footer">
+      Reference available upon request (active collaborator).
+    </footer>
+  </div>
+
+  <script>
+    async function downloadPDF() {
+      const { jsPDF } = window.jspdf;
+      const element = document.getElementById('resume');
+
+      const canvas = await html2canvas(element, {
+        scale: 3,
+        useCORS: true,
+        logging: false,
+        backgroundColor: '#ffffff'
+      });
+
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'in',
+        format: 'letter'
+      });
+
+      const imgData = canvas.toDataURL('image/png');
+      pdf.addImage(imgData, 'PNG', 0, 0, 8.5, 11);
+      pdf.save('Michael-Stuart-Resume.pdf');
+    }
+  </script>
+</body>
+</html>
