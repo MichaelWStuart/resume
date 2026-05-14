@@ -12,16 +12,36 @@ export interface ResumeData {
   email: string;
   phone: string;
   summary: string;
+  coverLetter: string[];
   experience: ExperienceEntry[];
-  referenceFooter: string;
 }
 
 export const resumeData: ResumeData = {
   name: "Michael Stuart",
   email: "michael159265@gmail.com",
   phone: "206-910-3915",
-  summary: `Full-stack engineer with a career arc from UI specialization → full product ownership → agentic AI-driven delivery. I’ve shipped real products in both pre-AI and post-AI eras — now focused on systems where human creativity directs AI automation, enabling smaller teams to deliver at enterprise scale.`,
+  summary: `Full-stack engineer with a career arc from UI specialization → full product ownership → agentic AI-driven delivery. Shipped real products in both pre-AI and post-AI eras. For nearly a year I've been perfecting my own agentic engineering process — hundreds of iterations, testing techniques, working through context and token constraints, dialing in what works and what doesn't — now delivering enterprise-scale work at a pace conventional teams can't match.`,
+  coverLetter: [
+    `I started as a front-end specialist. React, TypeScript, design polish — the better part of a decade building UI from scrappy startups up to 1,000-engineer orgs. I cared about the seams: accessibility, state management, UI that survives contact with reality.`,
+    `Then LLMs unlocked the rest of the stack. The wall — "I'd need to spin up on backend, infra, schemas, deploys" — collapsed into a tractable problem. Full-stack ownership became the default mode: backend, vector search, CI/CD, the whole product.`,
+    `The next threshold was agentic delivery. I stopped writing code by hand and started directing agents to write it. At first scaffolds and integrations; eventually I'd sketch an architecture and an orchestrated fleet of sessions would execute it. The interesting work shifted — from "what should this code look like?" to "what substrate, discipline, and verification machinery lets agents produce correct code at scale?"`,
+    `At this point the day-to-day shipping has become substrate — a testbed for proving out strategies of agentic engineering and pressure-testing the discipline. The interesting work lies one level above it.`,
+    `I'm building my own harness — an architectural layer where orchestration tiers, skill primitives, and validation machinery sit as first-class OS concepts rather than application-layer overlays. My own Claude Code, architected from the substrate up. And inside that layer, the theory that governs this new frontier: what agentic engineering actually is as a discipline, where the tools and the principles are both still being invented. That's the next surface I want to own.`,
+  ],
   experience: [
+    {
+      title: "Staff Software Engineer",
+      company: "G2I",
+      dateRange: "Feb 2026 – Present",
+      location: "Remote",
+      tagline: "Cloning popular enterprise apps in weeks — small team, self-engineered agentic workflows.",
+      bullets: [
+        "Building large-scale clones of popular enterprise applications for reinforcement learning training at a frontier AI lab",
+        "Designed my own agentic delivery methodology — orchestrate multi-session agent fleets to ship feature-sized PRs in parallel",
+        "Built and continuously refine a personal agentic toolkit — skill library, harness conventions, validation protocols — automating the delivery loop end-to-end",
+        "Team go-to for agentic development — patterns, tooling, and methodology",
+      ],
+    },
     {
       title: "Full Stack Software Engineer",
       company: "3rd Ear",
@@ -129,18 +149,5 @@ export const resumeData: ResumeData = {
         "Primary resource for debugging, architectural thinking, and confidence-building",
       ],
     },
-    {
-      title: "Intelligence Systems Maintainer/Integrator",
-      company: "US Army",
-      dateRange: "Jul 2003 – Jan 2009",
-      location: "Fort Drum, NY",
-      tagline: "High-pressure resilience — where execution and reliability weren’t optional.",
-      bullets: [
-        "Maintained mission-critical surveillance and comms systems across 100+ deployments",
-        "Built lasting operating principles: ownership, problem-solving, and delivery under stress",
-        "Developed the mentality that still defines me: figure it out, and ship",
-      ],
-    },
   ],
-  referenceFooter: "References available upon request.",
 };
