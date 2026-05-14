@@ -12,9 +12,6 @@ export function Summary({ text, storyParagraphs }: SummaryProps) {
   return (
     <section className="mb-4">
       <div className="relative">
-        <h2 className="font-mono text-xs font-semibold text-gray-500 uppercase tracking-[0.15em] mb-2">
-          Summary
-        </h2>
         <p className="text-sm text-gray-700 leading-relaxed">{text}</p>
         {hasStory && (
           <button
