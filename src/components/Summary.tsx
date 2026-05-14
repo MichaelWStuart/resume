@@ -11,16 +11,16 @@ export function Summary({ text, storyParagraphs }: SummaryProps) {
 
   return (
     <section className="mb-4">
-      <h2 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
-        Summary
-      </h2>
-      <div className="flex items-end justify-between gap-4">
-        <p className="text-sm text-gray-700 leading-relaxed flex-1">{text}</p>
+      <div className="relative">
+        <h2 className="font-mono text-xs font-semibold text-gray-500 uppercase tracking-[0.15em] mb-2">
+          Summary
+        </h2>
+        <p className="text-sm text-gray-700 leading-relaxed">{text}</p>
         {hasStory && (
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="no-print shrink-0 text-xs font-semibold text-gray-500 uppercase tracking-wider hover:text-gray-900 transition-colors"
+            className="no-print font-mono absolute bottom-0 right-0 text-xs font-semibold text-gray-500 uppercase tracking-[0.15em] hover:text-gray-900 transition-colors"
             aria-expanded={open}
           >
             {open ? "Less −" : "More +"}

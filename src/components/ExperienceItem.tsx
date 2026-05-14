@@ -18,15 +18,15 @@ export function ExperienceItem({
   return (
     <div className="experience-item mb-4">
       <div className="experience-header flex justify-between items-baseline mb-0.5">
-        <div>
+        <div className="font-display text-lg">
           <span className="font-semibold text-gray-900">{title}</span>
           <span className="text-gray-500"> · {company}</span>
         </div>
-        <div className="text-sm text-gray-500">
+        <div className="font-mono text-xs text-gray-500">
           {dateRange} · {location}
         </div>
       </div>
-      <p className="text-sm text-gray-500 italic mb-1.5">{tagline}</p>
+      <p className="font-display italic text-sm text-gray-600 mb-1.5">{tagline}</p>
       <ul className="list-disc list-outside ml-4 text-sm text-gray-700 space-y-0.5">
         {bullets.map((bullet, index) => (
           <li key={index}>{bullet}</li>
