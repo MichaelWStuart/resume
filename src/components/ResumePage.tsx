@@ -10,8 +10,8 @@ interface ResumePageProps {
 export function ResumePage({ data }: ResumePageProps) {
   return (
     <div className="resume-page flex flex-col">
-      <Header name={data.name} email={data.email} phone={data.phone} />
-      <Summary text={data.summary} storyParagraphs={data.coverLetter} />
+      <Header name={data.name} email={data.email} />
+      <Summary paragraphs={data.summary} />
       <ExperienceSection entries={data.experience} />
     </div>
   );
